@@ -26,6 +26,7 @@ h1 {
     width: 30%;
     background-color: white;
     border-radius: 4px;
+    box-shadow: 0 22px 50px rgba(14,21,47, .2), 0 8px 20px rgba(14,21,47, .2);
 }
 
 .fa-circle {
@@ -38,10 +39,6 @@ h1 {
     color: darkgray;
 }
 
-.cards {
-    /* padding-left: 10px; */
-}
-
 .card {
     display: flex;
     margin: 0 auto;
@@ -49,8 +46,12 @@ h1 {
     height: 50px;
     border-top: solid 1px darkgray;
     font-size: 0.8rem;
-    /* line-height: 50px; */
     align-items: center;
+    transition: background 0.15s ease-in-out;
+}
+
+.card:hover {
+    background-color: #e1e1e1;
 }
 
 .logo {
@@ -80,9 +81,21 @@ button {
     letter-spacing: .1rem;
     padding: 0;
     border: none;
+    outline: none;
+    border-radius: 0 0 4px 4px;
 }
 
 button img {
     vertical-align: middle;
     width: 15px;
+}
+
+button:hover {
+    background-color: rgba(74, 145, 173, 0.9);
+}
+
+/* This moves the whole button down 4px.  Seems the target image only moves the top 
+edge down a few pixels, but leaves the bottom edge stationary.  Not sure how to do this. */
+button:active {
+    transform: translateY(2px);
 }
