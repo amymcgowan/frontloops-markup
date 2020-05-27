@@ -1,0 +1,76 @@
+/* This one was a lot of fun.  I especially enjoyed learning about how to position
+the background bike image in a specific spot with the background-position property. 
+I also liked figuring out specific aspects of how the box-shadow works so that I 
+could get a specific effect around the circle-border-radius img.  There was also
+a lot of research leading up to that (I learned more about outlines and borders
+as well).  
+I used flexbox to lay out the left-right justfied pieces easily too. */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: teal;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+}
+
+.container {
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    padding: 20px 60px;
+    border-radius: 4px;
+    box-shadow: 0 22px 50px rgba(14,21,47, .2), 0 8px 20px rgba(14,21,47, .2);
+    background-image: url(./img/bicycle.png);
+    background-size: 600px;
+    background-position: 10px 250px;
+    background-repeat: no-repeat;
+}
+
+.separate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+.account {
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    padding: 8px;
+    transition: box-shadow 0.15s ease-in-out; 
+}
+
+/* Target image shows a border on hover with a solid edge 
+instead of a blurred edge that I have here. Not sure how to 
+get that solid edge.  But I like this. */
+/* figured it out!! box-shadow is 
+offset-x | offset-y | blur-radius | spread-radius | color 
+Since I didn't want it to blur, I need to set that to zero and
+instead have a spread-radius! */
+.account:hover {
+    box-shadow: 0 0 0 3px rgb(223, 221, 221);
+}
+
+.message {
+    color: lightslategray;
+    font-size: 0.9rem;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.item-name {
+    color: rgb(57, 90, 90);
+    font-weight: 500;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
